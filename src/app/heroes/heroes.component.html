@@ -1,0 +1,49 @@
+<mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile
+        *ngFor="let tile of tiles"
+        [colspan]="tile.cols"
+        [rowspan]="tile.rows"
+        [style.background]="tile.color">
+        {{tile.text}}
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]=4 [rowspan]=1 [style.background]="'white'">
+        Line
+    </mat-grid-tile>
+</mat-grid-list>
+
+
+
+<div>
+    <mat-grid-list cols="3" rowHeight="100px">
+        <mat-grid-tile [colspan]=1 [rowspan]=3 [style.background]="'lightyellow'">
+            <div>
+                <li *ngFor="let hero of heroes"
+                    [class.selected]="hero === selectedHero"
+                    (click)="onSelect(hero)">
+                    <span class="badge">{{hero.id}}</span> {{hero.name}}
+                </li>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]=1 [rowspan]=3 [style.background]="'lightpink'">
+            <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]=1 [rowspan]=3 [style.background]="'lightblue'">
+            <app-messages></app-messages>
+        </mat-grid-tile>
+
+        
+    </mat-grid-list>
+    
+
+    
+
+</div>
+
+
+
+
+<div>
+    <mat-slider></mat-slider>    
+
+</div>
+
