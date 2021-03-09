@@ -21,10 +21,9 @@
                     <a routerLink="/detail/{{hero.id}}">
                         <span class="badge">{{hero.id}}</span> {{hero.name}}
                     </a>
+                    <!---Delete Hero Button-->
+                    <button mat-mini-fab title="delete hero" (click)="delete(hero)" > X </button>
                 </li>
-
-                <!---Delete Hero Button-->
-            
             </div>
         </mat-grid-tile>
         <mat-grid-tile [colspan]=1 [rowspan]=4 [style.background]="'lightpink'">
