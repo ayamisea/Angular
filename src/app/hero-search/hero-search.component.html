@@ -1,14 +1,21 @@
 <div id="search-component">
     <h4><label for="search-box">Hero Search</label></h4>
-
-    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
-
-    <ul class="search-result">
-        <li *ngFor="let hero of heroes$ | async" >
-            <a routerLink="/detail/{{hero.id}}">
-            {{hero.name}}
-            </a>
-        </li>
-    </ul>
+</div>
+<div>
+    <mat-grid-list cols="3" rowHeight="100px">
+        <mat-grid-tile [colspan]=1 [rowspan]=4 [style.background]="'lightyellow'">
+            <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]=2 [rowspan]=4 [style.background]="'lightpink'">
+            <ul class="search-result">
+                <li *ngFor="let hero of heroes$ | async" >
+                    <a routerLink="/detail/{{hero.id}}">
+                        {{hero.name}}
+                    </a>
+                </li>
+            </ul>
+        </mat-grid-tile>
+      
+    </mat-grid-list>
 </div>
 
