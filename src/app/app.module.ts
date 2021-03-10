@@ -33,7 +33,8 @@ import { ChartComponent } from './chart/chart.component';
 
 //Chart
 import { ChartsModule } from 'ng2-charts';
-import { D3Component } from './d3/d3.component';
+import { D3ChartComponent } from './d3-chart/d3-chart.component';
+import { MaterialSearchComponent } from './material-search/material-search.component';
 
 const mat_modules = [
   MatAutocompleteModule,
@@ -62,7 +63,8 @@ const mat_modules = [
     UitestComponent,
     DialogExample,
     ChartComponent,
-    D3Component
+    D3ChartComponent,
+    MaterialSearchComponent
   ],
   imports: [
     BrowserModule,

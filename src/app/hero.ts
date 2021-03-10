@@ -23,3 +23,8 @@ export interface DialogData {
   animal: string;
   name: string;
 }
+
+export interface IData {
+  label:string,
+  value:number,
+}
