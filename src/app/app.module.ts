@@ -29,6 +29,11 @@ import {MatMomentDateModule} from '@angular/material-moment-adapter' //date
 import {MatDialogModule} from '@angular/material/dialog';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 import {MatTabsModule} from '@angular/material/tabs';
+import { ChartComponent } from './chart/chart.component';
+
+//Chart
+import { ChartsModule } from 'ng2-charts';
+import { D3Component } from './d3/d3.component';
 
 const mat_modules = [
   MatAutocompleteModule,
@@ -45,6 +50,7 @@ const mat_modules = [
   MatTabsModule
 ];
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +60,9 @@ const mat_modules = [
     DashboardComponent,
     HeroSearchComponent,
     UitestComponent,
-    DialogExample
+    DialogExample,
+    ChartComponent,
+    D3Component
   ],
   imports: [
     BrowserModule,
@@ -64,6 +72,7 @@ const mat_modules = [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ChartsModule,
     mat_modules,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(

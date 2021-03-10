@@ -2,14 +2,9 @@ import { Component, OnInit ,Inject} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
-import {Task} from '../hero';
+import {Task,DialogData} from '../hero';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-
-
-export interface DialogData {
-  animal: string;
-  name: string;
-}
+import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-uitest',
@@ -18,11 +13,13 @@ export interface DialogData {
 })
 export class UitestComponent implements OnInit {
 
+  //*************************//
   //AutoComplete
   myControl = new FormControl();
   options: string[] = ['One', 'Two', 'Three'];
   filteredOptions: Observable<string[]> | undefined;
 
+  //*************************//
   //CheckBox Start =============
   task: Task = {
     name: 'Indeterminate',
@@ -57,10 +54,13 @@ export class UitestComponent implements OnInit {
   }
   //CheckBox End =============
 
+
+  //*************************//
   //DatePicker Start =================
   startDate = new Date(1990, 0, 1);
   //DatePicker End ==============
 
+  //*************************//
   //Dialog Start =============
   animal: string ="";
   name: string ="";
@@ -79,6 +79,13 @@ export class UitestComponent implements OnInit {
   }
   //Dialog End =============
 
+  
+  //*************************//
+  //ChartJS Start =============
+  // charts.component.ts
+
+
+  //ChartJS End ===============
 
   constructor(public dialog: MatDialog) { }
 
@@ -97,6 +104,8 @@ export class UitestComponent implements OnInit {
 }
 
 
+
+// Dialog
 @Component({
   selector: 'dialog-example',
   templateUrl: 'dialog-example.html',

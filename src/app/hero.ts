@@ -18,3 +18,8 @@ export interface Task {
   color: ThemePalette;
   subtasks?: Task[];
 }
+
+export interface DialogData {
+  animal: string;
+  name: string;
+}
